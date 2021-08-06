@@ -1,0 +1,12 @@
+body {
+    background-color: #0d253f;
+}
+
+#searchbox {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    padding: 3%;
+    background-color: #01b4e4;
+    box-shadow: 5px 5px 5px 5px gray;
+}
