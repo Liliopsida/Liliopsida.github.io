@@ -9,11 +9,21 @@ $(document).ready(function(){
     document.getElementById("searchbutton").onclick = function() {
         //get value of search bar
         let requestKeyword = document.getElementById("search").value;
+
+        requestConfig();
+
         //call requestKeyword function;
         searchKeyword(requestKeyword);
         
     };
 
+let requestConfig = function() {
+    let configURL = baseURL.concat("configuration?api_key=", APIKEY);
+
+    fetch(configURL).then(result => result.json()).then((data)=> {
+        console.log(data);
+    })
+}
 
 //function to return results for the keyword
 let searchKeyword = function (keyword) {
