@@ -4,6 +4,7 @@ body {
     text-align: center;
     padding-top: 1%;
     color: #90cea1;
+    height: 100%;
 }
 
 h1 {
@@ -85,4 +86,12 @@ img {
     background-color: rgb(63, 57, 57);
     padding: 2%;
     margin: 3%;
+}
+
+footer {
+    position: fixed;
+    width: 100%;   
+    bottom: 0;   
+    background-color: #0c738f;
+    color: black;
 }

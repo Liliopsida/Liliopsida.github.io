@@ -8,11 +8,12 @@
     <script src="imdb.js"></script>
 </head>
 <body>
-    <!--api interfacing-->
+    <!--top box with tmdb logo-->
     <div id="topbox">
         <img src=https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg>        
             <h1>Search for your favorite titles</h1>
         
+        <!--menu with buttons and search box-->
         <ul id="menu">
             <li>
                 <button type="button" id="trendingbutton">What's Trending?</button>
@@ -23,21 +24,17 @@
             
             <li>
                 <div id="searchbox">
-                
+                    <!--form with search button-->
                     <form id= "moviesearch">
                         <input type="text" id="search" placeholder="Search...">
                         <button type= "button" id="searchbutton">Go</button>
+                        <!--button works for now, ideally submit button in future-->
                     </form>
                 </div>
             </li>
-
             
         </ul>
-    </div>
-    
-
-    <!--search box-->
-   
+    </div>   
     
     <!--formated results-->
     <div id="moviegrid">
@@ -47,4 +44,7 @@
     
 
 </body>
+<footer>
+    Sourced from The Movie Database 2021
+</footer>
 </html>
