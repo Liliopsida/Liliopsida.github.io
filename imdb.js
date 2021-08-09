@@ -3,19 +3,7 @@ let imageURL = "https://image.tmdb.org/t/p/w185/"
 const APIKEY = "77fc4cf5a7c91a8806988b1b2dc95d68";
 
 //make sure DOM is ready
-$(document).ready(function(){
-
-    //get keyword and run searchKeyword function
-    document.getElementById("searchbutton").onclick = function() {
-        //get value of search bar
-        let requestKeyword = document.getElementById("search").value;
-
-        requestConfig();
-
-        //call requestKeyword function;
-        searchKeyword(requestKeyword);
-        
-    };
+$(document).ready(function() {
 
 let requestConfig = function() {
     let configURL = baseURL.concat("configuration?api_key=", APIKEY);
@@ -32,16 +20,36 @@ let searchKeyword = function (keyword) {
     //fetch results
     fetch(requestURL).then(result => result.json()).then((data)=> {
         //create ul element
-        var ul = document.createElement("ul");
-        ul.setAttribute("id", "movielist");
-        document.getElementById("moviegrid").appendChild(ul);
-        console.log(data.results);
-        for (var element of data.results) {
+        passjson(data);   
+    });
+}
+
+let requestTrending = function() {
+    let trendURL = baseURL.concat("trending/movie/day?api_key=", APIKEY);
+    fetch(trendURL).then(result => result.json()).then((data)=> {
+        passjson(data);
+    });
+}
+
+let requestPopular = function() {
+    let popURL = baseURL.concat("discover/movie?api_key=", APIKEY, "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate");
+    fetch(popURL).then(result => result.json()).then((data)=> {
+        passjson(data);
+    });
+}
+
+let passjson = function(data) {
+    clearData();
+    var ul = document.createElement("ul");
+    ul.setAttribute("id", "movielist");
+    document.getElementById("moviegrid").appendChild(ul);
+    console.log(data.results);
+    for (var element of data.results) {
             
             //generate trye url for image
             let truePosterPath = imageURL.concat(element.poster_path); 
-            
-            //make li for each result
+                    
+                    //make li for each result
             var li = document.createElement("li");
             document.getElementById("movielist").appendChild(li);
 
@@ -60,11 +68,29 @@ let searchKeyword = function (keyword) {
             var h2 = document.createElement("h2");
             h2.innerHTML = element.original_title;
             div.appendChild(h2); 
-        
         }
-
-        //document.getElementById('moviegrid').innerHTML = JSON.stringify(data, null, 4);
-    });
 }
+
+let clearData = function () {
+    document.getElementById("moviegrid").innerHTML = "";
+}
+
+    //get keyword and run searchKeyword function
+    document.getElementById("searchbutton").onclick = function() {
+        //get value of search bar
+        let requestKeyword = document.getElementById("search").value;
+        requestConfig();
+        //call requestKeyword function;
+        searchKeyword(requestKeyword);
+    };
+
+    document.getElementById("trendingbutton").onclick = function() {
+        requestTrending();
+    };
+
+    document.getElementById("popreleasebutton").onclick = function() {
+        requestPopular();
+    };
+
 
 });

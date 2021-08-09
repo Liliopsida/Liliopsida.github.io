@@ -9,21 +9,35 @@
 </head>
 <body>
     <!--api interfacing-->
+    <div id="topbox">
+        <img src=https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg>        
+            <h1>Search for your favorite titles</h1>
+        
+        <ul id="menu">
+            <li>
+                <button type="button" id="trendingbutton">What's Trending?</button>
+            </li>
+            <li>
+                <button type="button" id="popreleasebutton">What's Popular?</button>
+            </li>
+            
+            <li>
+                <div id="searchbox">
+                
+                    <form id= "moviesearch">
+                        <input type="text" id="search" placeholder="Search...">
+                        <button type= "button" id="searchbutton">Go</button>
+                    </form>
+                </div>
+            </li>
 
+            
+        </ul>
+    </div>
     
 
     <!--search box-->
-    <div id="searchbox">
-        <img src=https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg>        
-        <h1>Search for your favorite titles</h1>
-        <br>
-        
-        <form class = "moviesearch">
-            <input type="text" id="search" placeholder="Search...">
-            <button type= "button" id="searchbutton">Go</button>
-        </form>
-        
-    </div>
+   
     
     <!--formated results-->
     <div id="moviegrid">

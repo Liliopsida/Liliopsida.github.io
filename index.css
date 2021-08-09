@@ -2,24 +2,8 @@ body {
     background-color: #061525;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    padding-top: .5%;
+    padding-top: 1%;
     color: #90cea1;
-}
-
-#searchbox {
-    margin: auto;
-    text-align: center;
-    width: 60%;
-    padding: 2%;
-    background-color: #0c738f;
-    box-shadow: -1px 5px 10px 7px #075166;
-}
-
-#moviegrid {
-    width: 90%;
-    margin: auto;
-    padding-left: auto;
-    padding-right: auto;
 }
 
 h1 {
@@ -28,18 +12,8 @@ h1 {
 
 ul {
     list-style-type: none;
-    padding: 2%;
-    margin: 2%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 20%);
-}
-
-li {
-    margin: 4%;
-    padding: 1%;
-    box-shadow: solid 2px black;
-    border-radius: 10px;
-    background-color: rgb(63, 57, 57);
+    
 }
 
 h2 {
@@ -63,4 +37,52 @@ img {
     padding-right: auto;
     margin:auto;
     display:block;
+}
+
+#topbox {
+    margin: auto;
+    text-align: center;
+    width: 60%;
+    padding: 1%;
+    background-color: #0c738f;
+    box-shadow: -1px 5px 10px 7px #075166;
+}
+
+#topbox ul li{
+    background-color: #0c738f;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 0%;
+}
+
+#menu {
+    background-color: #0c738f;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 0%;
+    width: 75%;
+    grid-template-columns: repeat(auto-fit, 25%);
+}
+
+#searchbox {
+    padding-left: 150%;
+}
+
+#moviegrid {
+    width: 90%;
+    margin: auto;
+    padding: 1%;
+    margin: 1%;
+}
+
+#moviegrid ul{
+    grid-template-columns: repeat(auto-fit, 20%);
+}
+
+#moviegrid ul li {
+    box-shadow: solid 2px black;
+    border-radius: 10px;
+    background-color: rgb(63, 57, 57);
+    padding: 2%;
+    margin: 3%;
 }
